@@ -28,4 +28,14 @@ SELECT SUM(reviews) FROM analytics;
 --Query 14--
 SELECT category, COUNT(*) FROM analytics GROUP BY category HAVING COUNT(*) > 300;
 --Query 15--
-SELECT app_name, reviews, min_installs, min_installs/reviews AS proportion FROM analytics WHERE min_installs >= 100000 ORDER BY proportion DESC LIMIT 1; 
+SELECT app_name, reviews, min_installs, min_installs/reviews AS proportion FROM analytics WHERE min_installs >= 100000 ORDER BY proportion DESC LIMIT 1;
+
+--FS1--
+
+--FS2--
+SELECT app_name FROM analytics WHERE app_name ILIKE '%facebook%';
+--FS3--
+SELECT app_name FROM analytics WHERE CARDINALITY(genres) > 1;
+--FS4--
+SELECT app_name FROM analytics WHERE '{"Education"}' IN (genres);
+
